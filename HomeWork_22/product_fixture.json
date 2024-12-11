@@ -1,9 +1,9 @@
 [
 {
     "model": "catalog.product",
-    "pk": 8,
+    "pk": 1,
     "fields": {
-        "name": "iphone",
+        "name": "POCO",
         "description": "very bed phone",
         "image": "",
         "category": 4,
