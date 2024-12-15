@@ -98,6 +98,16 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+
+      .card-description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* Ограничение по количеству строк */
+      -webkit-box-orient: vertical;
+      white-space: normal;
+      max-height: 4.5em; /* Высота блока для 3 строк текста */
+    }
     </style>
 
     
