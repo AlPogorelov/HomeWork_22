@@ -9,7 +9,7 @@
             <img src={{product.image.url}} class="object-fit-sm-contain border rounded" alt="...">
             <div class="card-body">
               <p class="card-text"> {{ product.name}}</p>
-              <p class="card-description"> {{ product.description}}</p>
+              <p class="card-description"> {{ product.description|truncatechars:100}}</p>
               <p class="card-text"> {{ product.price}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
