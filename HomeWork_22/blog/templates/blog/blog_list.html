@@ -1,0 +1,33 @@
+{% extends 'blog/home.html'%}
+{% block blog_list %}
+ <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for blog in blogs %}
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src={{blog.preview.url}} class="object-fit-sm-contain border rounded" alt="{{blog.title}}">
+            <div class="card-body">
+              <p class="card-text"> {{ blog.title}}</p>
+              <p class="card-description"> {{ blog.data}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a class="btn btn-primary" href="{{ blog.id }}" role="button">Подробнее</a>
+                </div>
+                <small class="text-body-secondary">
+                  <p>Товар создан:</p>
+                  <p>{{blog.created_at}}</p>
+                </small>
+                <small class="text-body-secondary">
+                  <p>Количество просмотров:</p>
+                  <p>{{blog.count_view}}</p>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+ </div>
+{% endblock %}

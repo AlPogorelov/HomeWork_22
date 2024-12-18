@@ -1,0 +1,31 @@
+{% extends 'blog/home.html'%}
+{% block blog_list %}
+ <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src={{blog.preview.url}} class="card-img-top" alt="{{blog.title}}">
+            <div class="card-body">
+              <p class="card-text"> Заголовок: {{ blog.title}}</p>
+              <p class="card-text"> Содержание: {{ blog.data}}</p>
+              <p class="card-text"> Признак публикации: {{ blog.published}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                 <div class="btn-group">
+                  <a class="btn btn-primary" href="{% url 'blog:home' %}" role="button">Список статей</a>
+                  <a class="btn btn-primary" href="{% url 'blog:blog_update' blog.pk %}" role="button">Изменить статью</a>
+                  <a class="btn btn-primary" href="{% url 'blog:blog_delite' blog.pk %}" role="button">Удалить статью</a>
+                <small class="text-body-secondary">
+                  <p>Товар создан:</p>
+                  <p>{{blog.created_at}}</p>
+                </small>
+                <small class="text-body-secondary">
+                  <p>Количество просмотров:</p>
+                  <p>{{blog.count_view}}</p>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+ </div>
+{% endblock %}
