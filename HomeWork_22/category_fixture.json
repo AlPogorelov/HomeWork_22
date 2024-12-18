@@ -1,0 +1,18 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+        "name": "Smartphone",
+        "description": "Смартфоны"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+        "name": "TV",
+        "description": "Телевизоры"
+    }
+}
+]
