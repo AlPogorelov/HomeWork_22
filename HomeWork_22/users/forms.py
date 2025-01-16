@@ -3,9 +3,9 @@ from .models import User
 
 
 class UserRegisterForm(UserCreationForm):
-    class Meta:
+    class Meta(UserCreationForm.Meta):
         model = User
-        fields = ("email", "password1", "password2")
+        fields = ("email",)
 
 
 class UserAuthenticationForm(AuthenticationForm):
