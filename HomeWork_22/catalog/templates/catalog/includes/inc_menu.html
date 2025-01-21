@@ -3,7 +3,11 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
-          <h4>About</h4>
+          {% if user.is_authenticated %}
+          <h4>Приветствую {{user.email}}</h4>
+          {% else %}
+          <h4>Приветствую Гость</h4>
+          {% endif %}
           <p class="text-body-secondary"> Информация</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
