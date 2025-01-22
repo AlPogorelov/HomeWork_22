@@ -23,7 +23,7 @@ class ProductCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView)
         return super().form_valid(form)
 
 
-class ContactView(LoginRequiredMixin, PermissionRequiredMixin, TemplateView):
+class ContactView(TemplateView):
     template_name = 'catalog/contact.html'
 
 
