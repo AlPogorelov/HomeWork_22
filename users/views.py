@@ -6,7 +6,7 @@ from django.views import View
 from django.views.generic import CreateView
 from .forms import UserCreationForm, UserRegisterForm
 from django.core.mail import send_mail
-from ..config.settings import EMAIL_HOST_USER
+from config.settings import EMAIL_HOST_USER
 
 
 class UserLoginView(LoginView):

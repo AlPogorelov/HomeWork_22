@@ -60,3 +60,8 @@ class ProductForm(forms.ModelForm):
             'placeholder': 'Введите цену товара'  # Текст подсказки внутри поля
         })
 
+
+class ProductModeratorForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['published']

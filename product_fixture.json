@@ -1,0 +1,28 @@
+[
+{
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+        "name": "POCO",
+        "description": "very bed phone",
+        "image": "",
+        "category": 4,
+        "price": 100000,
+        "created_at": "2024-12-02",
+        "updated_at": "2024-12-04"
+    }
+},
+    {
+        "model": "catalog.product",
+        "pk": 2,
+        "fields": {
+            "name": "LG",
+            "description": "Norm TV",
+            "image": "",
+            "category": 5,
+            "price": 500000,
+            "created_at": "2024-12-02",
+            "updated_at": "2024-12-04"
+        }
+    }
+]
