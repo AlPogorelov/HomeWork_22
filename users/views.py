@@ -7,11 +7,16 @@ from django.views.generic import CreateView
 from .forms import UserCreationForm, UserRegisterForm
 from django.core.mail import send_mail
 from config.settings import EMAIL_HOST_USER
+from django.core.cache import cache
 
 
 class UserLoginView(LoginView):
     template_name = 'users/login.html'
     success_url = reverse_lazy('catalog:product_list')
+
+    def form_valid(self, form):
+        cache.delete('product_list')
+        return super().form_valid(form)
 
 
 class UserRegisterView(CreateView):
@@ -35,5 +40,6 @@ class UserRegisterView(CreateView):
 
 
 def custom_logout(request):
+    cache.delete('product_list')
     logout(request)
     return redirect('/catalog/')
