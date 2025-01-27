@@ -37,7 +37,6 @@ class ProductByCategoryListView(ListView):
         return context
 
 
-
 class ProductCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     model = Product
     form_class = ProductForm
