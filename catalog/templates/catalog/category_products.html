@@ -1,0 +1,54 @@
+<!-- catalog/category_products.html -->
+{% extends 'catalog/home.html' %}
+{% block content %}
+
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">Продукты в категории {{ category.name }}</h1>
+        <a href="{% url 'catalog:category_list' %}" class="btn btn-primary">Вернуться в Категории</a>
+    </div>
+  </div>
+</section>
+
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% for product in products %}
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ product.image.url }}" class="object-fit-sm-contain border rounded" alt="...">
+          <div class="card-body">
+            <p class="card-text">{{ product.name }}</p>
+            <p class="card-description">{{ product.description|truncatechars:100 }}</p>
+            <p class="card-text">{{ product.price }} руб.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                {% if user.is_authenticated %}
+                <a class="btn btn-primary" href="{% url 'catalog:product_detail' product.id %}" role="button">Подробнее</a>
+                {% else %}
+                <a class="btn btn-secondary disabled" href="#" role="button">Подробнее</a>
+                {% endif %}
+              </div>
+              <small class="text-body-secondary">
+                <p>Товар создан:</p>
+                <p>{{ product.created_at }}</p>
+              </small>
+              <small class="text-body-secondary">
+                <p>Товар обновлен:</p>
+                <p>{{ product.updated_at }}</p>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <div class="col">
+        <p>В данной категории продуктов пока нет.</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
